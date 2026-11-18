@@ -129,7 +129,9 @@ const display = document.getElementById("display");
 const button = document.getElementById("button");
 
 
-
+button.addEventListener("click", () => {
+    const xhttp = new XMLHttpRequest();
+})
 
 
 
