@@ -131,6 +131,13 @@ const button = document.getElementById("button");
 
 button.addEventListener("click", () => {
     const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'https://v2.jokeapi.dev/joke/Any?type=single', true);
+    xhttp.onload = () => {
+        if (xhttp === 200) {
+            
+        }
+    }
+    xhttp.send();
 })
 
 
