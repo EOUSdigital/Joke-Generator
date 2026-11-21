@@ -31,8 +31,10 @@ button.addEventListener("click", () => {
             const jokeText = jokeData.joke;
             display.textContent = jokeText;
         } else {
-            Object.values(httpErrorMessage);
-            return Math.random(Math.floor());
+            const messages = Object.values(httpErrorMessage);
+            const index = Math.floor(Math.random() * messages.length);
+            const errorText = messages[index];
+            display.textContent = errorText;
         }
     }
     xhttp.send();
