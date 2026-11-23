@@ -1,0 +1,276 @@
+:root {
+    /* --- 1. Primitive tokens (the raw values) --- */
+    
+    /* White  */
+    --raw-white: #ffffff;                   /* Body background hex */
+    
+    /* Black */
+    --raw-primary-charcoal: #0b0c0c;        /* Primary text deep charcoal */
+    --raw-dark-slate: #484949;              /* Secondary-text grey */
+    --raw-light-shade-gray: #cecece;        /* Standard layout border hex */
+
+    --color-primary-50:  #e6f7f2;
+    --color-primary-100: #c0ebdf;
+    --color-primary-200: #93ddca;
+    --color-primary-300: #5fcfb3;
+    --color-primary-400: #35c29e;
+    --color-primary-500: #1D9E75; /* base brand color */
+    --color-primary-600: #168a63;
+    --color-primary-700: #0e7250;
+    --color-primary-800: #075a3d;
+    --color-primary-900: #013d28;
+    --color-primary-950: #002418;
+
+    /* --- 2. Semantic tokens (purpose-named, point to primitives) --- */
+    /* Text */
+    --color-text-primary: var(--raw-primary-charcoal);
+    --color-text-secondary: var(--raw-dark-slate);
+    --color-text-muted: var(--raw-light-shade-gray);
+
+    /* Link */
+    --color-link: #1a65a6;
+    --color-link-hover: #0f385c;
+    --color-link-visited: var(--raw-shade-violet-blue);
+    --color-link-active: var(--raw-primary-charcoal);
+
+    /* Border */
+    --color-border: var(--raw-soft-shade-blue);
+    --color-input-border: var(--raw-primary-charcoal);
+
+    /* Background  */
+    --color-template-background: var(--raw-gray-100);
+    --color-body-background: var(--raw-white);
+
+    --color-primary: var(--raw-blue-600);
+    --color-primary-hover: var(--raw-blue-800);
+
+    --color-success: var(--raw-green);
+    --color-error: var(--raw-red);
+    --color-warning: var(--raw-orange);
+    --color-warning-accent: var(--raw-yellow);
+    --color-promo-surface: var(--raw-lightyellow);
+    --color-premium: var(--raw-purple-600);
+
+
+    /* --- 3. ACCESSIBILITY NAVIGATION TOKENS --- */
+    /* High-contrast solid yellow loop that remains visible across all container themes */
+    --focus-ring: 0 0 0 0.188rem var(--raw-slate-900), 0 0 0 0.375rem var(--raw-yellow);
+
+    /* --- 4. TIMING & MOTION TOKENS --- */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 400ms ease;
+    
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-emphasized: var(--ease-standard); /* Point to base standard token to avoid duplication */
+    --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+    --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    --ease-linear: linear; 
+
+    --slider-fade-duration: 700ms;
+    --slider-fade-timing: ease-in-out;
+    --slider-fade-delay: 0s;
+
+    --caption-animation-duration: 900ms;
+    --caption-animation-delay: 250ms;
+    --caption-animation-timing: ease-out;
+
+    --motion-distance-none: 0;
+    --motion-distance-xs: 1rem;
+    --motion-distance-sm: 2rem;
+    --motion-distance-md: 4rem;
+    --motion-distance-lg: 6rem;
+    --motion-distance-xl: 8rem;
+
+    /* --- 5. LAYOUT & Spacing design tokens --- */
+    --container-max: 96rem;
+    --header-height: 4rem;
+    --input-height: 2.5rem;
+
+    --spacing-xxs: 0.25rem;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 5rem;
+    
+    --gutter: 1rem;
+
+    /* Border radius tokens */
+    --radius-sm: 0.188rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl:  1.5rem;
+    --radius-full: 9999px; /* Replaced magic rem value with standard browser absolute circle clipping */
+
+    /* --- 6. Shadow design tokens --- */
+    --shadow-sm: 0 0.0625rem 0.125rem rgba(3, 3, 3, 0.12), 0 0 0.125rem rgba(3, 3, 3, 0.06);
+    --shadow-md: 0 0.25rem 0.5rem rgba(3, 3, 3, 0.12), 0 0 0.25rem rgba(3, 3, 3, 0.06);
+    --shadow-lg: 0 0.5rem 1rem rgba(3, 3, 3, 0.16), 0 0 0.375rem rgba(3, 3, 3, 0.08);
+    --shadow-xl: 0 1rem 2rem rgba(3, 3, 3, 0.16), 0 0 0.5rem rgba(3, 3, 3, 0.1);
+
+    /* --- 7. Typography design tokens --- */
+    --font-main: 'Atkinson Hyperlegible', system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 3rem;
+
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.3;
+    --line-height-normal: 1.5;
+
+    /* --- 8. RESPONSIVE BREAKPOINTS --- */
+    --breakpoint-sm: 30rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
+
+    /* --- 9. LAYER INDEXES (Z-INDEX) --- */
+    --z-xs: 100;
+    --z-sm: 200;
+    --z-md: 300;
+    --z-lg: 400;
+    --z-dropdown: 500;
+    --z-modal: 600;
+    --z-tooltip: 1000;
+
+    /* --- 10. Dark mode — only semantic tokens change --- */
+    [data-theme="dark"] {
+    --color-background: #0f0f0f;
+    --color-surface:    #1a1a1a;
+    --color-border:     #2d2d2d;
+    --color-text:       #f0f0f0;
+    --color-accent:     #34d399;
+    --color-accent-hover: #10b981;
+}
+}
+
+/* --- 1. GLOBAL BOX-SIZING & BASE RESET --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Clear margins and paddings only on actual layout tags */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 2. GLOBAL LINK ACCESSIBILITY POLICY --- */
+a {
+    /* Keep underlines active on regular text anchors to meet contrast/usability guidelines */
+    text-decoration: underline;
+    text-underline-offset: 0.15em; /* Cleaner visual spacing */
+}
+
+/* Remove underlines safely *only* on components where text intent is completely obvious */
+nav a,
+.button,
+.sidebar-link {
+    text-decoration: none;
+}
+
+/* --- 3. ROOT CANVAS LAYOUT --- */
+html {
+    height: 100%;
+    overflow-x: hidden;
+    /* 'auto' prevents scroll-snapping issues and honors user prefers-reduced-motion settings */
+    scroll-behavior: auto; 
+}
+
+body {
+    display: grid;
+    /* Automatically creates a perfect Header -> Main Content -> Footer structure */
+    grid-template-rows: auto 1fr auto;
+
+    /* Uses dynamic viewport metrics to stop mobile browser bar clipping */
+    min-height: 100dvh;
+
+    /* Primary accessible variable at the front of the system stack */
+    font-family: var(--font-main);
+    
+    /* Highly accessible text distribution configurations */
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-normal);
+    
+    /* Semantic token hooks */
+    background-color: var(--color-body-background);
+    color: var(--color-text-primary);
+}
+
+/* --- 4. INTERACTIVE ACCESSIBILITY FOCUS RULES --- */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    /* Use the high-contrast yellow/dark ring token you constructed */
+    box-shadow: var(--focus-ring);
+    /* Remove default browser outlines to prevent overlapping double borders */
+    outline: none; 
+}
+
+/* --- Components --- */
+/* A button component consuming design tokens */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+}
+
+
+
+/* --- Media --- */
+/* Auto dark mode based on OS preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-background: #0f0f0f;
+        --color-surface:    #1a1a1a;
+        --color-text:       #f0f0f0;
+        --color-accent:     #34d399;
+    }
+}
+
+/* Manual override takes precedence */
+[data-theme="dark"] {
+    --color-background: #0f0f0f;
+    --color-surface:    #1a1a1a;
+    --color-text:       #f0f0f0;
+    --color-accent:     #34d399;
+}
+
+
+
+
+
