@@ -1,60 +1,162 @@
 :root {
-    /* --- 1. Primitive tokens (the raw values) --- */
+    /* --- 1. Primitive tokens --- */
     
     /* White  */
-    --raw-white: #ffffff;                   /* Body background hex */
-    
-    /* Black */
-    --raw-primary-charcoal: #0b0c0c;        /* Primary text deep charcoal */
-    --raw-dark-slate: #484949;              /* Secondary-text grey */
-    --raw-light-shade-gray: #cecece;        /* Standard layout border hex */
+    --color-primary-white: #ffffff;
 
-    --color-primary-50:  #e6f7f2;
-    --color-primary-100: #c0ebdf;
-    --color-primary-200: #93ddca;
-    --color-primary-300: #5fcfb3;
-    --color-primary-400: #35c29e;
-    --color-primary-500: #1D9E75; /* base brand color */
-    --color-primary-600: #168a63;
-    --color-primary-700: #0e7250;
-    --color-primary-800: #075a3d;
-    --color-primary-900: #013d28;
-    --color-primary-950: #002418;
+    /* Black */
+    --color-primary-black: #000000;
+
+    /* Primary color — full 50–950 scale */
+    --color-primary-50: #f9faff;
+    --color-primary-100: #eef1ff;
+    --color-primary-200: #d9dfff;
+    --color-primary-300: #b9c3ff;
+    --color-primary-400: #8e9aff;
+    --color-primary-500: #6668ff;
+    --color-primary-600: #4f46e5;
+    --color-primary-700: #3d2ec1;
+    --color-primary-800: #2b1497;
+    --color-primary-900: #1b006f;
+    --color-primary-950: #0c0041;
+
+    /* Accent */
+    --color-accent-50: #faffd3;
+    --color-accent-100: #f0f7a7;
+    --color-accent-200: #dce546;
+    --color-accent-300: #c3cc00;
+    --color-accent-400: #a2a800;
+    --color-accent-500: #7e8300;
+    --color-accent-600: #656900;
+    --color-accent-700: #4f5200;
+    --color-accent-800: #373a00;
+    --color-accent-900: #242600;
+    --color-accent-950: #121300;
+
+    /* Neutral */
+    --color-neutral-50: #f9fafd;
+    --color-neutral-100: #f0f1f7;
+    --color-neutral-200: #dfe1ea;
+    --color-neutral-300: #c4c7d3;
+    --color-neutral-400: #a1a4b2;
+    --color-neutral-500: #7d7f8e;
+    --color-neutral-600: #636573;
+    --color-neutral-700: #4d4f5b;
+    --color-neutral-800: #353742;
+    --color-neutral-900: #22232c;
+    --color-neutral-950: #101117;
+
+    /* Success */
+    --color-success-50: #effff2;
+    --color-success-100: #d9fee1;
+    --color-success-200: #b5f7c6;
+    --color-success-300: #84e7a1;
+    --color-success-400: #4dcc7a;
+    --color-success-500: #00ab57;
+    --color-success-600: #008844;
+    --color-success-700: #006a34;
+    --color-success-800: #004a22;
+    --color-success-900: #003014;
+    --color-success-950: #001707;
+
+    /* Warning */
+    --color-warning-50: #fff9f1;
+    --color-warning-100: #ffecd3;
+    --color-warning-200: #ffd191;
+    --color-warning-300: #f2a618;
+    --color-warning-400: #ca8900;
+    --color-warning-500: #9f6b00;
+    --color-warning-600: #805500;
+    --color-warning-700: #664200;
+    --color-warning-800: #492f00;
+    --color-warning-900: #311e00;
+    --color-warning-950: #1b0f00;
+
+    /* Danger */
+    --color-danger-50: #fff8f7;
+    --color-danger-100: #ffeeeb;
+    --color-danger-200: #ffd8d3;
+    --color-danger-300: #ffb4ab;
+    --color-danger-400: #ff7b6f;
+    --color-danger-500: #ea3d38;
+    --color-danger-600: #c80b18;
+    --color-danger-700: #9f000d;
+    --color-danger-800: #720007;
+    --color-danger-900: #4d0003;
+    --color-danger-950: #2a0001;
+
+    /* Info */
+    --color-info-50: #f6fbff;
+    --color-info-100: #e8f4ff;
+    --color-info-200: #cbe6ff;
+    --color-info-300: #9ad0ff;
+    --color-info-400: #4ab0ff;
+    --color-info-500: #008cdd;
+    --color-info-600: #006fb1;
+    --color-info-700: #00578c;
+    --color-info-800: #003d64;
+    --color-info-900: #002743;
+    --color-info-950: #001324;
 
     /* --- 2. Semantic tokens (purpose-named, point to primitives) --- */
     /* Text */
-    --color-text-primary: var(--raw-primary-charcoal);
-    --color-text-secondary: var(--raw-dark-slate);
-    --color-text-muted: var(--raw-light-shade-gray);
+    --color-text-primary: var(--color-neutral-700);
+    --color-text-secondary: var(--color-neutral-900);
+    --color-text-muted: var(--color-neutral-300);
 
     /* Link */
     --color-link: #1a65a6;
     --color-link-hover: #0f385c;
-    --color-link-visited: var(--raw-shade-violet-blue);
-    --color-link-active: var(--raw-primary-charcoal);
+    --color-link-visited: var(--color-primary-900);
+    --color-link-active: var(--color-primary-charcoal);
 
     /* Border */
-    --color-border: var(--raw-soft-shade-blue);
-    --color-input-border: var(--raw-primary-charcoal);
+    --color-border: var(--color-neutral-200);
+    --color-border-strong: var(--color-neutral-300);
 
     /* Background  */
-    --color-template-background: var(--raw-gray-100);
-    --color-body-background: var(--raw-white);
+    --color-background: var(--color-neutral-50);
+    --color-background-subtle: var(--color-neutral-100);
+    --color-background-muted: var(--color-neutral-200);
+    --color-surface: #ffffff;
+    --color-surface-raised: #ffffff;
+    --color-fg: var(--color-neutral-900);
+    --color-fg-muted: var(--color-neutral-600);
+    --color-fg-subtle: var(--color-neutral-500);
 
-    --color-primary: var(--raw-blue-600);
-    --color-primary-hover: var(--raw-blue-800);
+    --color-ring: var(--color-primary-500);
 
-    --color-success: var(--raw-green);
-    --color-error: var(--raw-red);
-    --color-warning: var(--raw-orange);
-    --color-warning-accent: var(--raw-yellow);
-    --color-promo-surface: var(--raw-lightyellow);
-    --color-premium: var(--raw-purple-600);
+    --color-brand: var(--color-primary-600);
+    --color-brand-hover: var(--color-primary-700);
+    --color-brand-active: var(--color-primary-800);
+    --color-brand-subtle: var(--color-primary-50);
+    --color-brand-fg: #ffffff;
+
+    --color-accent: var(--color-accent-500);
+    --color-accent-hover: var(--color-accent-600);
+    --color-accent-subtle: var(--color-accent-50);
+    --color-accent-fg: #ffffff;
+
+    --color-success: var(--color-success-600);
+    --color-success-subtle: var(--color-success-50);
+    --color-success-fg: var(--color-success-800);
+
+    --color-warning: var(--color-warning-600);
+    --color-warning-subtle: var(--color-warning-50);
+    --color-warning-fg: var(--color-warning-800);
+
+    --color-danger: var(--color-danger-600);
+    --color-danger-subtle: var(--color-danger-50);
+    --color-danger-fg: var(--color-danger-800);
+
+    --color-info: var(--color-info-600);
+    --color-info-subtle: var(--color-info-50);
+    --color-info-fg: var(--color-info-800);
 
 
     /* --- 3. ACCESSIBILITY NAVIGATION TOKENS --- */
     /* High-contrast solid yellow loop that remains visible across all container themes */
-    --focus-ring: 0 0 0 0.188rem var(--raw-slate-900), 0 0 0 0.375rem var(--raw-yellow);
+    --focus-ring: 0 0 0 0.188rem var(--color-neutral-900), 0 0 0 0.375rem var(--color-accent-400);
 
     /* --- 4. TIMING & MOTION TOKENS --- */
     --transition-fast: 150ms ease;
@@ -118,7 +220,7 @@
     --shadow-xl: 0 1rem 2rem rgba(3, 3, 3, 0.16), 0 0 0.5rem rgba(3, 3, 3, 0.1);
 
     /* --- 7. Typography design tokens --- */
-    --font-main: 'Atkinson Hyperlegible', system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+    --font-main: 'Atkinson Hyperlegible', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -152,16 +254,52 @@
     --z-dropdown: 500;
     --z-modal: 600;
     --z-tooltip: 1000;
-
-    /* --- 10. Dark mode — only semantic tokens change --- */
-    [data-theme="dark"] {
-    --color-background: #0f0f0f;
-    --color-surface:    #1a1a1a;
-    --color-border:     #2d2d2d;
-    --color-text:       #f0f0f0;
-    --color-accent:     #34d399;
-    --color-accent-hover: #10b981;
 }
+
+/* --- Dark mode — only semantic tokens change --- */
+.dark, [data-theme="dark"] {
+    --color-background: var(--color-neutral-950);
+    --color-background-subtle: var(--color-neutral-900);
+    --color-background-muted: var(--color-neutral-800);
+
+    --color-surface: var(--color-neutral-900);
+    --color-surface-raised: var(--color-neutral-800);
+
+    --color-fg: var(--color-neutral-50);
+    --color-fg-muted: var(--color-neutral-300);
+    --color-fg-subtle: var(--color-neutral-400);
+    
+    --color-border: var(--color-neutral-800);
+    --color-border-strong: var(--color-neutral-700);
+    
+    --color-ring: var(--color-primary-400);
+    
+    --color-brand: var(--color-primary-300);
+    --color-brand-hover: var(--color-primary-200);
+    --color-brand-active: var(--color-primary-100);
+    --color-brand-subtle: var(--color-primary-950);
+    --color-brand-fg: #0a0a0a;
+    
+    --color-accent: var(--color-accent-300);
+    --color-accent-hover: var(--color-accent-200);
+    --color-accent-subtle: var(--color-accent-950);
+    --color-accent-fg: #0a0a0a;
+    
+    --color-success: var(--color-success-500);
+    --color-success-subtle: var(--color-success-950);
+    --color-success-fg: var(--color-success-300);
+
+    --color-warning: var(--color-warning-500);
+    --color-warning-subtle: var(--color-warning-950);
+    --color-warning-fg: var(--color-warning-300);
+
+    --color-danger: var(--color-danger-500);
+    --color-danger-subtle: var(--color-danger-950);
+    --color-danger-fg: var(--color-danger-300);
+
+    --color-info: var(--color-info-500);
+    --color-info-subtle: var(--color-info-950);
+    --color-info-fg: var(--color-info-300);
 }
 
 /* --- 1. GLOBAL BOX-SIZING & BASE RESET --- */
@@ -215,7 +353,7 @@ body {
     line-height: var(--line-height-normal);
     
     /* Semantic token hooks */
-    background-color: var(--color-body-background);
+    background-color: var(--color-background);
     color: var(--color-text-primary);
 }
 
@@ -236,10 +374,10 @@ textarea:focus {
 .btn-primary {
     background-color: var(--color-accent);
     color: #ffffff;
-    padding: var(--spacing-2) var(--spacing-4);
+    padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--radius-md);
-    font-size: var(--text-sm);
-    line-height: var(--leading-normal);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
     box-shadow: var(--shadow-sm);
     transition: background-color 0.15s ease;
 }
