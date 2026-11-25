@@ -155,8 +155,8 @@
 
 
     /* --- 3. ACCESSIBILITY NAVIGATION TOKENS --- */
-    /* High-contrast solid yellow loop that remains visible across all container themes */
-    --focus-ring: 0 0 0 0.188rem var(--color-neutral-900), 0 0 0 0.375rem var(--color-accent-400);
+    /* High-contrast solid loop that remains visible across all container themes */
+    --focus-ring: 0 0 0 0.188rem var(--color-neutral-900), 0 0 0 0.375rem var(--color-neutral-500);
 
     /* --- 4. TIMING & MOTION TOKENS --- */
     --transition-fast: 150ms ease;
@@ -319,7 +319,8 @@
 a {
     /* Keep underlines active on regular text anchors to meet contrast/usability guidelines */
     text-decoration: underline;
-    text-underline-offset: 0.15em; /* Cleaner visual spacing */
+    /* Cleaner visual spacing */
+    text-underline-offset: 0.15em; 
 }
 
 /* Remove underlines safely *only* on components where text intent is completely obvious */
@@ -366,46 +367,136 @@ textarea:focus {
     /* Use the high-contrast yellow/dark ring token you constructed */
     box-shadow: var(--focus-ring);
     /* Remove default browser outlines to prevent overlapping double borders */
-    outline: none; 
+    /* outline: none; */
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: var(--container-max);
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    border: 1px red solid;          /* Temporary development settings */
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-xl) 0;
+    border: 1px blue solid;
 }
 
 /* --- Components --- */
 /* A button component consuming design tokens */
-.btn-primary {
-    background-color: var(--color-accent);
-    color: #ffffff;
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-normal);
-    box-shadow: var(--shadow-sm);
-    transition: background-color 0.15s ease;
+.animated-interaction {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    
+    border: 0.1rem solid var(--color-primary-black);
+    color: var(--color-primary-white);
+    box-sizing: border-box;
+    max-width: 60%;
+    cursor: pointer;
+    float: right;
+    border-radius: 0;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    font-size: 0.8rem;
+    padding: 1.25em 2em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    box-shadow: var(--shadow-md);
+.animated-interaction::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 0.2rem;
+    background: black;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
 }
 
-
-
-/* --- Media --- */
-/* Auto dark mode based on OS preference */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --color-background: #0f0f0f;
-        --color-surface:    #1a1a1a;
-        --color-text:       #f0f0f0;
-        --color-accent:     #34d399;
-    }
+.animated-interaction .text {
+    display: block;
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
 }
 
-/* Manual override takes precedence */
-[data-theme="dark"] {
-    --color-background: #0f0f0f;
-    --color-surface:    #1a1a1a;
-    --color-text:       #f0f0f0;
-    --color-accent:     #34d399;
+.animated-interaction .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.animated-interaction .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.animated-interaction .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.animated-interaction:hover {
+    color: white;
+    background: black;
+}
+
+.animated-interaction:hover::before {
+    width: 0.9375rem;
+    background: white;
+}
+
+.animated-interaction:hover .text {
+    color: white;
+    padding-left: 1.5em;
+}
+
+.animated-interaction:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+
+.animated-interaction:hover .bottom-key-1,
+.animated-interaction:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
 }
 
 
