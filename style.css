@@ -418,93 +418,98 @@ textarea:focus {
     padding: 1.25rem 2rem;
     margin: 1.5rem auto 0;
     
-    width: 60%;
-    max-width: 16rem;
-    min-width: 12rem;
+    width: 55%;
+    max-width: 15rem;
+    min-width: 10rem;
+
     border-radius: 0;
-    font-weight: 700;
+    font-size: 0.6rem;
     letter-spacing: 0.05rem;
-    font-size: 0.8rem;
-    outline: none;
+    font-weight: var(--font-weight-semibold);
+
     overflow: visible;
+    outline: none;
     text-decoration: none;
     text-transform: none;
     user-select: none;
+
     transition: all 0.3s ease-in-out;
 }
 
 .animated-interaction::before {
-    content: " ";
-    width: 1.5625rem;
-    height: 0.2rem;
-    background: black;
-    top: 50%;
-    left: 1.5em;
     position: absolute;
-    transform: translateY(-50%);
+    content: " ";
+    width: 1.8rem;
+    height: 0.15rem;
+    top: 50%;
+    left: 1.5rem;
+    
+    background: black;
     transform-origin: center;
+    transform: translateY(-50%);
     transition: background 0.3s linear, width 0.3s linear;
 }
 
 .animated-interaction .text {
     display: block;
-    font-size: 1.125em;
-    line-height: 1.33333em;
-    padding-left: 2em;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    text-decoration: none;
+    white-space: nowrap;
     color: black;
+    padding-left: 1.8rem;
+    font-size: 0.7rem;
+    line-height: 1.33333em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 
 .animated-interaction .top-key {
-    height: 2px;
-    width: 1.5625rem;
-    top: -2px;
-    left: 0.625rem;
     position: absolute;
+    height: 0.125rem;
+    width: 1.8rem;
+    top: -0.125rem;
+    left: 0.625rem;
     background: #e8e8e8;
     transition: width 0.5s ease-out, left 0.3s ease-out;
 }
 
 .animated-interaction .bottom-key-1 {
-    height: 2px;
-    width: 1.5625rem;
-    right: 1.875rem;
-    bottom: -2px;
     position: absolute;
+    height: 0.125rem;
+    width: 1.8rem;
+    bottom: -0.125rem;
+    right: 1.875rem;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
 .animated-interaction .bottom-key-2 {
-    height: 2px;
-    width: 0.625rem;
-    right: 0.625rem;
-    bottom: -2px;
     position: absolute;
+    height: 0.125rem;
+    width: 0.625rem;
+    bottom: -0.125rem;
+    right: 0.625rem;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
 .animated-interaction:hover {
-    color: white;
-    background: black;
+    color: var(--color-primary-white);
+    background: var(--color-primary-black);
 }
 
 .animated-interaction:hover::before {
     width: 0.9375rem;
-    background: white;
+    background: var(--color-primary-white);
 }
 
 .animated-interaction:hover .text {
-    color: white;
-    padding-left: 1.5em;
+    color: var(--color-primary-white);
+    padding-left: 1.5rem;
 }
 
 .animated-interaction:hover .top-key {
-    left: -2px;
+    left: -0.125rem;
     width: 0px;
 }
 
